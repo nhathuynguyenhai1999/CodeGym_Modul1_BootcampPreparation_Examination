@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Average</title>
+</head>
+<body>
+<script>
+    function findAvg(scores) {
+        // Kiểm tra nếu mảng rỗng
+        if (scores.length === 0) {
+            return 0.0;
+        }
+
+        // Khởi tạo tổng điểm
+        let total = 0.0;
+
+        // Duyệt qua từng phần tử trong mảng và cộng vào tổng
+        for (let i = 0; i < scores.length; i++) {
+            total += scores[i];
+        }
+
+        // Tính điểm trung bình
+        let average = total / scores.length;
+
+        return average;
+    }
+
+    // Ví dụ sử dụng
+    let scoresList = [75, 80, 95, 60, 85];
+    let averageScore = findAvg(scoresList);
+    alert(`Điểm trung bình là: ${averageScore}`);
+</script>
+</body>
+</html>

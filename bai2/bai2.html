@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Number to Array</title>
+</head>
+<body>
+<script>
+    function insertNumberToArray(arr, x, index) {
+        if (index < 0 || index > arr.length) {
+            return arr;
+        }
+
+        let newArray = [];
+
+        for (let i = 0; i < arr.length; i++) {
+            if (i === index) {
+                newArray.push(x);
+            }
+            newArray.push(arr[i]);
+        }
+
+        if (index === arr.length) {
+            newArray.push(x);
+        }
+
+        return newArray;
+    }
+
+    let originalArray = [1, 2, 3, 4, 5];
+    let insertedArray = insertNumberToArray(originalArray, 10, 2);
+
+    // Sử dụng alert thay vì console.log
+    alert("Mảng sau khi thêm số: " + insertedArray);
+</script>
+</body>
+</html>
+

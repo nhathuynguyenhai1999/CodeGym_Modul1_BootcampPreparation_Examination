@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sum of Prime Numbers</title>
+</head>
+<body>
+<script>
+  function isPrime(num) {
+    if (num <= 1) {
+      return false;
+    }
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+      if (num % i === 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  function sumOfListPrime(x) {
+    // Kiểm tra x để tránh tính tổng cho x < 0
+    if (x < 0) {
+      return 0;
+    }
+
+    let sum = 0;
+
+    // Duyệt qua từng số từ 0 đến x và tính tổng các số nguyên tố
+    for (let i = 0; i <= x; i++) {
+      if (isPrime(i)) {
+        sum += i;
+      }
+    }
+
+    return sum;
+  }
+
+  // Ví dụ sử dụng với alert
+  let xValue = 10;
+  let result = sumOfListPrime(xValue);
+  alert(`Tổng các số nguyên tố từ 0 đến ${xValue}: ${result}`);
+</script>
+</body>
+</html>
